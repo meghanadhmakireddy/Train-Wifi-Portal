@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train WiFi Login</title>
+</head>
+<body>
+
+<h2>Train WiFi Access</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <label>PNR Number:</label><br>
+    <input type="text" name="pnr" required><br><br>
+
+    <label>Mobile Number:</label><br>
+    <input type="text" name="mobile" required><br><br>
+
+    <button type="submit">Connect</button>
+</form>
+
+<p style="color:red;">{{ message }}</p>
+
+</body>
+</html>

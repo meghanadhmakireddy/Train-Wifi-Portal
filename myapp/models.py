@@ -2,7 +2,7 @@ from django.db import models
 
 class TrainPassenger(models.Model):
     pnr = models.CharField(max_length=10, unique=True)
-    mobile_number = models.CharField(max_length=10)
+    booking_mobile = models.CharField(max_length=10)   # booking contact number
     passenger_count = models.IntegerField()
     journey_active = models.BooleanField(default=True)
 
