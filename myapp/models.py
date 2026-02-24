@@ -8,3 +8,8 @@ class TrainPassenger(models.Model):
 
     def __str__(self):
         return self.pnr
+
+class OTPVerification(models.Model):
+    mobile_number = models.CharField(max_length=10)
+    otp = models.CharField(max_length=6)
+    created_at = models.DateTimeField(auto_now_add=True)
