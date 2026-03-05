@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Train Wi-Fi Portal</title>
+</head>
+<body>
+
+<h2>Train Wi-Fi Connected</h2>
+
+<p><b>PNR:</b> {{ pnr }}</p>
+
+<p><b>Devices Connected:</b> {{ connected }} / {{ allowed }}</p>
+
+<p><b>Daily Data Policy:</b> 1GB per passenger</p>
+
+<form method="POST" action="/disconnect/">
+{% csrf_token %}
+<button type="submit">Disconnect Device</button>
+</form>
+
+</body>
+</html>

@@ -7,17 +7,15 @@
 
 <h2>Enter OTP</h2>
 
-{% if otp %}
-<p>Your OTP (Demo): <b>{{ otp }}</b></p>
-{% endif %}
+<p><b>Demo OTP:</b> {{ otp }}</p>
 
 <form method="POST">
-    {% csrf_token %}
-    <input type="text" name="otp" placeholder="Enter OTP" required>
-    <button type="submit">Verify</button>
+{% csrf_token %}
+<input type="text" name="otp" placeholder="Enter OTP">
+<button type="submit">Verify</button>
 </form>
 
-<p>{{ message }}</p>
+<p style="color:red;">{{ message }}</p>
 
 </body>
 </html>
