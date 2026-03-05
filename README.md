@@ -7,4 +7,4 @@ Tech Stack:
 - SQLite Database
 
 Current Status:
-few database setup completed.
+Limitations and validation setup completed.
