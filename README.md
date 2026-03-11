@@ -8,7 +8,5 @@ Tech Stack:
 
 Current Status:
 
-Limitations and validation setup completed.
-
-otp generation for demo and verification completed.
+Real-time OTP system integrated using Twilio API.
 
