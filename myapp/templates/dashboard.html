@@ -1,22 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Train Wi-Fi Portal</title>
+
+<title>Train WiFi Dashboard</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+
+background:url("/static/images/dashboarddd.jpg"); 
+background-size:cover;
+background-position:center;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(24,26,47,0.85);
+z-index:-1;
+}
+
+.navbar{
+background:#54162B;
+padding:15px;
+color:white;
+font-size:20px;
+}
+
+.container{
+display:flex;
+justify-content:flex-end;   
+align-items:center;
+height:80vh;
+padding-top: 6%;
+
+padding-right:50%;
+}
+
+.card{
+background:#242E49;
+padding:35px;
+width:420px;
+border-radius:12px;
+color:white;
+text-align:center;
+}
+
+.logo{
+width:70px;
+margin-bottom:10px;
+}
+
+h3{
+color:#FDA481;
+}
+
+button{
+margin-top:20px;
+padding:10px 20px;
+background:#B4182D;
+border:none;
+border-radius:6px;
+color:white;
+}
+
+.footer{
+margin-top:20px;
+font-size:13px;
+color:#aaa;
+}
+
+.page-title{
+position:absolute;
+top:35px;
+width:90%;
+text-align:center;
+
+font-family:'Orbitron', sans-serif;
+font-size:38px;
+letter-spacing:4px;
+
+color:#FDA481;
+text-shadow:0 0 15px rgba(253,164,129,0.6);
+}
+
+.page-subtitle{
+position:absolute;
+top:80px;
+width:90%;
+text-align:center;
+
+font-family:'Orbitron', sans-serif;
+font-size:14px;
+letter-spacing:2px;
+
+color:#cfd6e6;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h2>Train Wi-Fi Connected</h2>
+<div class="page-title">
+TRAIN WIFI CONNECTION DASHBOARD
+</div>
 
-<p><b>PNR:</b> {{ pnr }}</p>
+<div class="page-subtitle">
+Active Network Session
+</div>
 
-<p><b>Devices Connected:</b> {{ connected }} / {{ allowed }}</p>
+<div class="navbar">
+🚆 Train WiFi Dashboard
+</div>
 
-<p><b>Daily Data Policy:</b> 1GB per passenger</p>
+<div class="container">
 
-<form method="POST" action="/disconnect/">
-{% csrf_token %}
-<button type="submit">Disconnect Device</button>
+<div class="card">
+
+<img src="/static/images/logo.png" class="logo"> 
+
+<h3>Connection Status</h3>
+
+<p><b>PNR:</b> {{pnr}}</p>
+
+<p><b>Connected Devices:</b> {{connected}} / {{allowed}}</p>
+
+<p><b>Daily Data Limit:</b> 1 GB</p>
+
+<form action="/disconnect/">
+<button type="submit">Disconnect</button>
 </form>
+
+<div class="footer">
+Powered by RailwayNet
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>

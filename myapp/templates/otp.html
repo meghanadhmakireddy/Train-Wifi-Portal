@@ -1,21 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OTP Verification</title>
+
+<title>OTP Verification</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+
+background:url("/static/images/verify.jpg");
+background-size:cover;
+background-position:center;
+
+height:100vh;
+display:flex;
+justify-content:flex-end;  
+align-items:center;
+
+padding-right:10%;         
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(24,26,47,0.85);
+z-index:-1;
+}
+
+.box{
+background:#242E49;
+padding:40px;
+width:350px;
+border-radius:12px;
+text-align:center;
+}
+
+.logo{
+width:70px;
+margin-bottom:10px;
+}
+
+h2{
+color:#FDA481;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:#37415C;
+border:none;
+border-radius:6px;
+color:white;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:20px;
+background:#FDA481;
+border:none;
+border-radius:6px;
+}
+
+.error{
+color:#B4182D;
+margin-top:10px;
+}
+
+.page-title{
+position:absolute;
+top:35px;
+width:90%;
+text-align:center;
+
+font-family:'Orbitron', sans-serif;
+font-size:38px;
+letter-spacing:4px;
+
+color:#FDA481;
+text-shadow:0 0 15px rgba(253,164,129,0.6);
+}
+
+.page-subtitle{
+position:absolute;
+top:80px;
+width:90%;
+text-align:center;
+
+font-family:'Orbitron', sans-serif;
+font-size:14px;
+letter-spacing:2px;
+
+color:#cfd6e6;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h2>Enter OTP</h2>
+<div class="page-title">
+SECURE OTP VERIFICATION
+</div>
 
-<p><b>Demo OTP:</b> {{ otp }}</p>
+<div class="page-subtitle">
+Confirm your mobile number to access onboard WiFi
+</div>
+
+<div class="box">
+
+<img src="/static/images/logo.png" class="logo">
+
+<h2>OTP Verification</h2>
 
 <form method="POST">
 {% csrf_token %}
+
 <input type="text" name="otp" placeholder="Enter OTP">
-<button type="submit">Verify</button>
+
+<button type="submit">Verify OTP</button>
+
 </form>
 
-<p style="color:red;">{{ message }}</p>
+{% if message %}
+<div class="error">{{message}}</div>
+{% endif %}
+
+</div>
 
 </body>
 </html>
