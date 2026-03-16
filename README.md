@@ -8,5 +8,5 @@ Tech Stack:
 
 Current Status:
 
-Real-time OTP system integrated using Twilio API.
+completed the whole setup.
 
